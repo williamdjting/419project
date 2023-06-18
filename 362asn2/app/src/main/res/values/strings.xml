@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="dropdownArray1">
+    <item>Manual Entry</item> // opens the activity 2 list
+    <item>GPS</item> // opens map
+    <item>Automatic</item> // opens map
+</string-array>
+    <string-array name="dropdownArray2">
+        <item>Manual Entry</item> // opens the activity 2 list
+        <item>GPS</item> // opens map
+        <item>Automatic</item> // opens map
+    </string-array>
+    <string name="app_name">app-name</string>
+</resources>
+
+
