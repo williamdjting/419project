@@ -11,13 +11,12 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
 const links = [
-  { name: 'Projects', href: '/dashboard', icon: HomeIcon },
   {
-    name: 'Feedback',
+    name: 'Project Findings',
     href: '/dashboard',
     icon: DocumentDuplicateIcon,
   },
-  { name: 'Discussion', href: '/dashboard', icon: UserGroupIcon },
+  { name: 'Project Discussion', href: '/dashboard', icon: UserGroupIcon },
 ];
 
 export default function NavLinks() {
