@@ -20,10 +20,8 @@ const links = [
   { name: 'Discussion', href: '/dashboard', icon: UserGroupIcon },
 ];
 
-
 export default function NavLinks() {
   const pathname = usePathname();
-
 
   return (
     <>
