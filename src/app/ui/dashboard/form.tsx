@@ -7,6 +7,7 @@ import styles from './ui-dashboard.module.css';
 export function Form() {
   // State to manage form data
   const [formData, setFormData] = useState({
+    projectid: '',
     collection: '',
     distribution: '',
     quality: '',
@@ -36,13 +37,15 @@ export function Form() {
     <form className={styles.form} onSubmit={handleSubmit}>
       {/* Input fields for each property */}
       <div className={styles.form2}>
-        <textarea type="text" name="collection" value={formData.collection} onChange={handleChange} placeholder="Collection" rows={4} cols={25}/>
-        <textarea type="text" name="distribution" value={formData.distribution} onChange={handleChange} placeholder="Distribution" rows={4} cols={25} />
-        <textarea type="text" name="quality" value={formData.quality} onChange={handleChange} placeholder="Quality" rows={4} cols={25}/>
-        <textarea type="text" name="split" value={formData.split} onChange={handleChange} placeholder="Split" rows={4} cols={25} />
-        <textarea type="text" name="bias" value={formData.bias} onChange={handleChange} placeholder="Bias" rows={4} cols={25} />
-        <textarea type="text" name="influence" value={formData.influence} onChange={handleChange} placeholder="Influence" rows={4} cols={25} />
-        <textarea type="text" name="outcome" value={formData.outcome} onChange={handleChange} placeholder="Outcome" rows={4} cols={25} />
+
+        <input className={styles.form3} type="number" name="projectid" value={formData.projectid} onChange={handleChange} placeholder="projectid"/>
+        <textarea className={styles.form3} name="collection" value={formData.collection} onChange={handleChange} placeholder="Collection" rows={4} cols={25}/>
+        <textarea className={styles.form3}  name="distribution" value={formData.distribution} onChange={handleChange} placeholder="Distribution" rows={4} cols={25} />
+        <textarea className={styles.form3}  name="quality" value={formData.quality} onChange={handleChange} placeholder="Quality" rows={4} cols={25}/>
+        <textarea className={styles.form3} name="split" value={formData.split} onChange={handleChange} placeholder="Split" rows={4} cols={25} />
+        <textarea className={styles.form3} name="bias" value={formData.bias} onChange={handleChange} placeholder="Bias" rows={4} cols={25} />
+        <textarea className={styles.form3}  name="influence" value={formData.influence} onChange={handleChange} placeholder="Influence" rows={4} cols={25} />
+        <textarea className={styles.form3} name="outcome" value={formData.outcome} onChange={handleChange} placeholder="Outcome" rows={4} cols={25} />
         {/* Submit button */}
         <button type="submit">Submit</button>
       </div>
