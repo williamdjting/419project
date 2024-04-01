@@ -6,10 +6,12 @@ export function Card({
   key,
   title,
   value,
+  value2
 }: {
   key: number;
   title: string;
   value: string;
+  value2: string;
 }) {
   
 
@@ -20,6 +22,7 @@ export function Card({
       <span>
         <ul>{title}</ul>
         <ul>{value}</ul>
+        <ul>{value2}</ul>
       </span>
     </div>
     

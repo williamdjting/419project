@@ -1,6 +1,6 @@
 'use client'
 
-import { projectData } from '../../lib/project-data';
+import { datasheetData } from '../../lib/datasheet-data';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -13,13 +13,13 @@ export default function ProjectLinks() {
 
   return (
     <>
-    {projectData.map((project) => {
+    {datasheetData.map((data) => {
       return (
         <Link
-          key={project.id}
-          href={`/projects/${project.id}`} // Add the missing href property
+          key={data.id}
+          href={`/projects/${data.id}`} // Add the missing href property
         >
-        <li className={styles.projectbox}>{project.name}</li>
+        <li className={styles.projectbox}>{data.name}</li>
         </Link>
       );
     })}

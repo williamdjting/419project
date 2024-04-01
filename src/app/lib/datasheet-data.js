@@ -1,4 +1,4 @@
-const projectData = [
+const datasheetData = [
   {
     id: 1,
     name: 'DBRX Instruct ',
@@ -39,5 +39,5 @@ const projectData = [
 
 
 module.exports = {
-  projectData
+  datasheetData
 };
