@@ -3,10 +3,33 @@
 import React, { useState } from 'react';
 import styles from './ui-dashboard.module.css';
 
+// interface FormData {
+//   projectid: string;
+//   collection: string;
+//   distribution: string;
+//   quality: string;
+//   split: string;
+//   bias: string;
+//   influence: string;
+//   outcome: string;
+// }
+
+
 // Define the Form component
 export function Form() {
   // State to manage form data
   const [formData, setFormData] = useState({
+    projectid: '',
+    collection: '',
+    distribution: '',
+    quality: '',
+    split: '',
+    bias: '',
+    influence: '',
+    outcome: ''
+  });
+
+  const [submittedData, setSubmittedData] = useState({
     projectid: '',
     collection: '',
     distribution: '',
@@ -24,13 +47,16 @@ export function Form() {
       ...prevFormData,
       [name]: value
     }));
+    console.log("this is line 27", formData)
   };
 
   // Handler to submit form data
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can perform any action with the form data
-    console.log(formData);
+    setSubmittedData(formData);
+    console.log("this is line 33", submittedData);
+    
   };
   // JSX for the form
   return (
@@ -49,6 +75,18 @@ export function Form() {
         {/* Submit button */}
         <button type="submit">Submit</button>
       </div>
+      {submittedData && (
+        <div>
+          <p>ProjectID: {submittedData.projectid}</p>
+          <p>Collection: {submittedData.collection}</p>
+          <p>Distribution: {submittedData.distribution}</p>
+          <p>Quality: {submittedData.quality}</p>
+          <p>Split: {submittedData.split}</p>
+          <p>Bias: {submittedData.bias}</p>
+          <p>Influence: {submittedData.influence}</p>
+          <p>Outcome: {submittedData.outcome}</p>
+        </div>
+      )}
     </form>
   );
 }
