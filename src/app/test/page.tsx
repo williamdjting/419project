@@ -1,4 +1,4 @@
-import { Testing } from './testing'
+import  TestSubmitData  from './testing2'
 
 export default function Page() {
   return (
@@ -7,16 +7,7 @@ export default function Page() {
         hi
 
         <div>
-          <Testing submittedData={{
-          projectid: '',
-          collection: '',
-          distribution: '',
-          quality: '',
-          split: '',
-          bias: '',
-          influence: '',
-          outcome: ''
-        }} />
+          <TestSubmitData/>
         </div>
 
     </main>
