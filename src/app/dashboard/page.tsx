@@ -7,8 +7,8 @@ import { isDataView } from "util/types";
 export default function Page() {
   return (
     <main>
-      <div className={styles.dashboard}>
-        <div>
+      {/* <div className={styles.dashboard}> */}
+        {/* <div>
           {datasheetData.map((data) => {
             return (
               <Card
@@ -19,12 +19,12 @@ export default function Page() {
               />
             );
           })}
-        </div>
+        </div> */}
 
         <div>
           <Form />
         </div>
-      </div>
+      {/* </div> */}
     </main>
   );
 }
