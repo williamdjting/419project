@@ -3,9 +3,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import styles from './ui-dashboard.module.css';
 import axios from 'axios'; // Import Axios
-import { Testing } from '../../test/testing'
-
-// import { downloadCSV } from '../../lib/csv'
+import {TestSubmitDataDashboardPost, TestSubmitDataDashboardGet} from '../../lib/api-calls'
 
 // Define the Form component
 export function Form() {
@@ -37,6 +35,7 @@ export function Form() {
  
 
 
+
   // Handler to update form data
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,9 +47,13 @@ export function Form() {
     
   };
 
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
     // setSubmittedData((prevSubmittedData) => ({
     //   ...prevSubmittedData,
     //   ...formData
@@ -66,59 +69,15 @@ export function Form() {
     // Update the submittedData state with the new array
     setSubmittedData(newSubmittedData);
 
-
-
     console.log("this is formdata", formData);
 
     console.log("this is submitted data", submittedData);
+
+    await TestSubmitDataDashboardGet();
+    await TestSubmitDataDashboardPost(submittedData);
+
   }
-    // useEffect(() => {
-    //   setSubmittedData(formData); // Update submittedData whenever formData changes
-    // }, [formData]);
-  
-
-    // try {
-    //     // const response = await fetch('/api/submitData', {
-    //     const response = await fetch('../../../api/submitData', {
-    //     method: 'GET',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     // body: JSON.stringify({ submittedData: formData })
-    //   });
-    //   console.log("line 57")
-    //   console.log(response.ok)
-    //   console.log(response.body)
-    //   if (response.ok) {
-    //     console.log('CSV file saved successfully');
-    //     // Optionally, you can clear the form fields here
-        
-    //   } else {
-    //     console.error('Failed to save CSV file');
-    //   }
-    // } catch (error) {
-    //   console.error('Error:', error);
-    // }
-  // };
-
-  // // Handler to submit form data
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Here you can perform any action with the form data
-  //   setSubmittedData(formData);
-  //   console.log("this is line 33", submittedData);
     
-  // };
-
-  // const downloadCSV = () => {
-  //   const csvContent = `ProjectID,Collection,Distribution,Quality,Split,Bias,Influence,Outcome\n${Object.values(submittedData).join(',')}`;
-  //   const encodedUri = encodeURI(`data:text/csv;charset=utf-8,${csvContent}`);
-  //   const link = document.createElement('a');
-  //   link.setAttribute('href', encodedUri);
-  //   link.setAttribute('download', 'submittedData.csv');
-  //   document.body.appendChild(link);
-  //   link.click();
-  // };
 
 
 

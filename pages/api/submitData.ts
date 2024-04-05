@@ -2,34 +2,36 @@ import fs from 'fs';
 import path from 'path';
 
 import { NextResponse } from 'next/server'
+import type { NextApiHandler } from 'next';
 
-// export default async function handler(req, res) {
+// source of API logic: https://medium.com/@NikolovLazar/creating-and-using-api-routes-in-next-js-7c9798e67684
 
-//   res.status(200).json({ text: 'Hello' });
-  // console.log("line 5")
-  // const { submittedData } = req.body;
+const handler: NextApiHandler = async (req, res) => {
+  
+  if (req.method === 'GET') {
+    // process the GET request
+    return res.status(200).json({ name: 'John Doe' });
+  } else if (req.method === 'POST') {
+    try {
+      // Parse the incoming data from the request body
+      const submittedData = req.body;
 
-  // const csvContent = `ProjectID,Collection,Distribution,Quality,Split,Bias,Influence,Outcome\n${Object.values(submittedData).join(',')}`;
+      // Process the submitted data as needed
+      console.log('Received submittedData:', submittedData);
 
-  // try {
-  //   const filePath = path.join(process.cwd(), 'data', 'submittedData.csv'); // Adjust the path as needed
-  //   fs.writeFileSync(filePath, csvContent);
-  //   res.status(200).json({ success: true });
-  // } catch (error) {
-  //   console.error(error);
-  //   res.status(500).json({ success: false, error: 'Failed to write CSV file' });
-  // }
-// }
+      // Respond with a success message
+      return res.status(200).json({ success: true, message: 'Message success', submittedData });
+    } catch (error) {
+      // Handle any errors that occur during parsing or processing
+      console.error('Error:', error.message);
+      return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+  } else {
+    // Handle unsupported HTTP methods
+    return res.status(405).json({ success: false, message: 'Method Not Allowed' });
+  }
+  
+  
+};
 
-// export async function GET() {
-//   return NextResponse.json({
-//     hello: 'world',
-//   })
-
-// }
-
-export default async function handler(req, res) {
-
-  res.status(200).json({ text: 'Hello' });
-
-}
+export default handler;
