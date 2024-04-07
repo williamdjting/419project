@@ -1,6 +1,6 @@
 'use client'
 
-import { datasheetData } from '../../lib/datasheet-data';
+import  datasheetData  from '../../lib/datasheet-data';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

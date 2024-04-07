@@ -11,7 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import styles from "./ui-dashboard.module.css";
-import  datasheetData  from "../../lib/datasheet-data";
+import datasheetData from "../../lib/datasheet-data";
 
 import {
   TestSubmitDataDashboardPost,
@@ -132,7 +132,7 @@ export function AddProject() {
       </form>
 
       {links.map((link) => {
-        // const LinkIcon = link.icon;
+        const LinkIcon = link.icon;
         return (
           <Link
             key={link.name}
@@ -150,7 +150,7 @@ export function AddProject() {
         );
       })} 
 
-      {/* {datasheetData.map((data) => {
+      {datasheetData.map((data) => {
         const LinkIcon = data.icon;
         return (
           <Link
@@ -166,11 +166,11 @@ export function AddProject() {
             
             
             <li className={styles.projectbox}>
-            <LinkIcon className="w-6" />
+            {/* <LinkIcon className="w-6" /> */}
             {data.name}</li>
           </Link>
         );
-      })} */}
+      })}
     </>
   );
 }
