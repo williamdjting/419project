@@ -141,7 +141,7 @@
   /* border-radius: 5px; */
   height: 400px;
   font-weight: 500;
-  padding: 20px;
+  /* padding: 20px; */
   border: 2px solid white;   
   color: #2a68ec;
   font-family:'font-mono';
@@ -151,7 +151,7 @@
   background-color: #e0f2fe;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 
@@ -167,5 +167,5 @@
 
 .projectform3 {
   margin-bottom: 20px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }

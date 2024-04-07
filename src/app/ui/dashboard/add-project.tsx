@@ -131,7 +131,7 @@ export function AddProject() {
         </div>
       </form>
 
-      {links.map((link) => {
+      {/* {links.map((link) => {
         const LinkIcon = link.icon;
         return (
           <Link
@@ -148,7 +148,7 @@ export function AddProject() {
             <p className="hidden md:block">{link.name}</p>
           </Link>
         );
-      })} 
+      })}  */}
 
       {datasheetData.map((data) => {
         const LinkIcon = data.icon;
@@ -166,7 +166,7 @@ export function AddProject() {
             
             
             <li className={styles.projectbox}>
-            {/* <LinkIcon className="w-6" /> */}
+            <LinkIcon className="w-6" />
             {data.name}</li>
           </Link>
         );
