@@ -4,7 +4,7 @@ import axios from 'axios'; // Import Axios
 const TestSubmitDataDashboardGet = async () => {
   try {
     const response = await axios.get('http://localhost:3000/api/submitData');
-    console.log('Response:', response.data);
+    console.log('Get Response:', response.data);
     console.log("line 11")
   } catch (error) {
     console.error('Error:', error.response?.data || error.message);
@@ -16,7 +16,7 @@ const TestSubmitDataDashboardGet = async () => {
 const TestSubmitDataDashboardPost = async (data) => {
   try {
     const response = await axios.post('http://localhost:3000/api/submitData', data);
-    console.log('Response:', response.data);
+    console.log('POST Response:', response.data);
     console.log("line 11")
   } catch (error) {
     console.error('Error:', error.response?.data || error.message);

@@ -10,7 +10,9 @@ const handler: NextApiHandler = async (req, res) => {
   
   if (req.method === 'GET') {
     // process the GET request
-    return res.status(200).json({ name: 'John Doe' });
+    
+
+    return res.status(200).json({ success: true, message: 'GET Message success'});
   } else if (req.method === 'POST') {
     try {
       // Parse the incoming data from the request body
@@ -20,7 +22,7 @@ const handler: NextApiHandler = async (req, res) => {
       console.log('Received submittedData:', submittedData);
 
       // Respond with a success message
-      return res.status(200).json({ success: true, message: 'Message success', submittedData });
+      return res.status(200).json({ success: true, message: 'POST Message success', submittedData });
     } catch (error) {
       // Handle any errors that occur during parsing or processing
       console.error('Error:', error.message);
