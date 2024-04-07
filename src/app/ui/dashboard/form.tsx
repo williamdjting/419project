@@ -4,10 +4,22 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 import styles from './ui-dashboard.module.css';
 import axios from 'axios'; // Import Axios
 import {TestSubmitDataDashboardPost, TestSubmitDataDashboardGet} from '../../lib/api-calls'
+import { TestSubmitDataDashboardSideNavGet } from '@/app/lib/api-call-sidenav';
+import {readCSV} from '../../lib/readCSV'
 
 // Define the Form component
 export function Form() {
   // State to manage form data
+
+  const [csvData, setCsvData] = useState([
+    {
+      projectid: '',
+      projectname: 'Projects',
+      url: '',
+      description: '',
+      github: '',
+    }
+  ]);
 
   const [formData, setFormData] = useState({
     projectid: '',
@@ -32,8 +44,16 @@ export function Form() {
     outcome: ''
   }]);
 
- 
+  const filepath = 'submittedDataSideNav.csv'
+  
 
+  // useEffect(() => {
+  //   fetch('/api/submitDataSideNav') // Call the API route
+  //     .then(response => response.json())
+  //     .then(data => setCsvData(data))
+  //     .catch(error => console.error('Error fetching CSV data:', error));
+  // }, []);
+    
 
 
   // Handler to update form data
@@ -85,6 +105,8 @@ export function Form() {
   return (
 <>
     <div className={styles.topbar}>
+      
+
     </div>
 
 

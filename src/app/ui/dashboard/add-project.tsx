@@ -14,9 +14,9 @@ import styles from "./ui-dashboard.module.css";
 import datasheetData from "../../lib/datasheet-data";
 
 import {
-  TestSubmitDataDashboardPost,
-  TestSubmitDataDashboardGet,
-} from "../../lib/api-calls";
+  TestSubmitDataDashboardSideNavGet,
+  TestSubmitDataDashboardSideNavPost,
+} from "../../lib/api-call-sidenav";
 
 const links = [
   {
@@ -76,8 +76,8 @@ export function AddProject() {
 
     console.log("this is submitted data", submittedData);
 
-    await TestSubmitDataDashboardGet();
-    await TestSubmitDataDashboardPost(submittedData);
+    // await TestSubmitDataDashboardSideNavGet();
+    await TestSubmitDataDashboardSideNavPost(submittedData);
   };
 
   return (
