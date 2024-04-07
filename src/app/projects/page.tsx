@@ -1,6 +1,7 @@
 import { Card } from "../ui/dashboard/cards";
 import { datasheetData } from "../lib/datasheet-data";
 import { Form } from "../ui/dashboard/form";
+import { AddProject } from "../ui/dashboard/add-project";
 import  styles  from './dashboard.module.css';
 import { isDataView } from "util/types";
 
@@ -20,6 +21,9 @@ export default function Page() {
             );
           })}
         </div> */}
+        <div>
+          {/* <AddProject/> */}
+        </div>
 
         <div>
           <Form />
