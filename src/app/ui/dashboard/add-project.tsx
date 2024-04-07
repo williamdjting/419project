@@ -31,20 +31,22 @@ export function AddProject() {
   const pathname = usePathname();
 
   const [projectData, setProjectData] = useState({
-    projectid: "",
-    projectname: "",
-    url: "",
-    description: "",
-    github: "",
+    projectid: '',
+    projectname: '',
+    url: '',
+    description: '',
+    icon: DocumentDuplicateIcon,
+    github: '',
   });
 
   const [submittedData, setSubmittedData] = useState([
     {
-      projectid: "",
-      projectname: "",
-      url: "",
-      description: "",
-      github: "",
+      projectid: '',
+      projectname: '',
+      url: '',
+      description: '',
+      icon: DocumentDuplicateIcon,
+      github: '',
     },
   ]);
 
@@ -97,7 +99,7 @@ export function AddProject() {
             value={projectData.projectname}
             onChange={handleChange}
             placeholder="projectname"
-            rows={2}
+            rows={1}
             cols={25}
           />
           <textarea
@@ -106,7 +108,7 @@ export function AddProject() {
             value={projectData.url}
             onChange={handleChange}
             placeholder="url"
-            rows={2}
+            rows={1}
             cols={25}
           />
           <textarea
@@ -115,7 +117,7 @@ export function AddProject() {
             value={projectData.description}
             onChange={handleChange}
             placeholder="description"
-            rows={2}
+            rows={1}
             cols={25}
           />
           <textarea
@@ -124,7 +126,7 @@ export function AddProject() {
             value={projectData.github}
             onChange={handleChange}
             placeholder="github"
-            rows={2}
+            rows={1}
             cols={25}
           />
           <button type="submit">Submit</button>
@@ -150,7 +152,7 @@ export function AddProject() {
         );
       })}  */}
 
-      {datasheetData.map((data) => {
+      {/* {datasheetData.map((data) => {
         const LinkIcon = data.icon;
         return (
           <Link
@@ -168,6 +170,27 @@ export function AddProject() {
             <li className={styles.projectbox}>
             <LinkIcon className="w-6" />
             {data.name}</li>
+          </Link>
+        );
+      })} */}
+
+      {submittedData.map((data) => {
+        const LinkIcon = data.icon;
+        return (
+          <Link
+            key={data.projectid}
+            href={`/projects/${data.projectid}`} // Add the missing href property
+            // className={clsx(
+            //   "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3",
+            //   {
+            //     "bg-sky-100 text-blue-600": pathname === data.href,
+            //   }
+            // )}
+          >
+            <li className={styles.projectbox}>
+              <LinkIcon className="w-6" />
+              {data.projectname}
+            </li>
           </Link>
         );
       })}
