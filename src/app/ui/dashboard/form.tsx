@@ -95,7 +95,9 @@ export function Form() {
   // JSX for the form
   return (
     <>
-      <div className={styles.topbar}>
+
+      <div className={styles.topbarContainer}>
+      <div className={styles.topbar1}>
         <div className={styles.mapbox}>
           <div>
             <p>Collection: {csvData.projectname}</p>
@@ -105,6 +107,20 @@ export function Form() {
           </div>
         </div>
       </div>
+
+      <div className={styles.topbar2}>
+        <div className={styles.mapbox}>
+          <div>
+            <p>Collection: {csvData.projectname}</p>
+            <p>Distribution: {csvData.url}</p>
+            <p>Quality: {csvData.description}</p>
+            <p>Split: {csvData.github}</p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+
 
       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>

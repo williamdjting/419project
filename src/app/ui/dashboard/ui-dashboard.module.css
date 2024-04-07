@@ -1,8 +1,14 @@
 .container {
   display: flex;
+  margin-left: -10px;
 }
 
-.topbar {
+.topbarContainer {
+  display: flex;
+
+}
+
+.topbar1 {
   width: 100%;
   /* border-radius: 5px; */
   height: 400px;
@@ -12,12 +18,30 @@
   color: #2a68ec;
   font-family:'font-mono';
   justify-content: center;
-  margin-top: 0px;
+  margin-top: -30px;
   margin-bottom: 10px;
   background-color: #e0f2fe;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
-  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.topbar2 {
+  width: 100%;
+  /* border-radius: 5px; */
+  height: 400px;
+  font-weight: 500;
+  padding: 20px;
+  border: 2px solid white;   
+  color: #2a68ec;
+  font-family:'font-mono';
+  justify-content: center;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  background-color: #e0f2fe;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  /* margin-right: 10px; */
 }
 
 .projectbox {
