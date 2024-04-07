@@ -4,9 +4,9 @@ import fs from 'fs';
 function readCSV(filePath: string): any[] {
   // Read the CSV file
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-
+  const rows = fileContent.trim().split('\n').slice(2); // Skip the first two rows
   // Split the file content into rows
-  const rows = fileContent.trim().split('\n');
+
 
   // Extract data from each row
   const data = rows.map(row => {

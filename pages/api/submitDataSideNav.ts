@@ -9,27 +9,53 @@ import type { NextApiHandler } from 'next';
 const handler: NextApiHandler = async (req, res) => {
   
   if (req.method === 'GET') {
-    // process the GET request
-    // try {
-    //   const filePath = path.resolve('./submittedDataSideNav.csv'); // Adjust the path as needed
-    //   const fileContent = fs.readFileSync(filePath, 'utf-8');
-    //   const rows = fileContent.trim().split('\n');
-    //   const data = rows.map(row => {
-    //     const values = row.split(',');
-    //     return {
-    //       projectid: values[0],
-    //       projectname: values[1],
-    //       url: values[2],
-    //       description: values[3],
-    //       icon: values[4],
-    //       github: values[5],
-    //     };
-    //   });
-    //   res.status(200).json(data);
-    // } catch (error) {
-    //   console.error('Error reading CSV file:', error);
-    //   res.status(500).json({ error: 'Internal Server Error' });
-    // }    
+    //process the GET request
+    try {
+      const filePath = path.resolve('src/app/lib/submittedDataSideNav.csv'); // Adjust the path as needed
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      const rows = fileContent.trim().split('\n');
+      const rowToProcess = rows[4]
+      console.error("line 17");
+      // const data = rows.map(row => {
+      //   try {
+      //     const values = row.split(',');
+      //     return {
+      //         projectid: values[0],
+      //         projectname: values[1],
+      //         url: values[2],
+      //         description: values[3],
+      //         icon: values[4],
+      //         github: values[5],
+      //     };
+      // } catch (innerError) {
+      //     console.error('Error parsing row:', innerError);
+      //     throw innerError; // Re-throw the error to bubble it up to the outer catch block
+      // }
+      // });
+      try {
+        const values = rowToProcess.split(',');
+        const data = {
+            projectid: values[0],
+            projectname: values[1],
+            url: values[2],
+            description: values[3],
+            icon: values[4],
+            github: values[5],
+        };
+
+        // Log the response data
+        console.log('Response data:', data);
+
+        // Send the response
+        res.status(200).json(data);
+    } catch (innerError) {
+        console.error('Error parsing row:', innerError);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+} catch (error) {
+    console.error('Error reading CSV file:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+}   
 
     // return res.status(200).json({ success: true, message: 'GET Message success submitDataSideNav'});
   } else if (req.method === 'POST') {
