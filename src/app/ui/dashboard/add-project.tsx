@@ -42,7 +42,7 @@ export function AddProject() {
   const [submittedData, setSubmittedData] = useState([
     {
       projectid: '',
-      projectname: '',
+      projectname: 'Projects',
       url: '',
       description: '',
       icon: DocumentDuplicateIcon,
@@ -174,6 +174,9 @@ export function AddProject() {
         );
       })} */}
 
+      <div className={styles.projectListContainer}>
+
+
       {submittedData.map((data) => {
         const LinkIcon = data.icon;
         return (
@@ -194,6 +197,8 @@ export function AddProject() {
           </Link>
         );
       })}
+      </div>
+
     </>
   );
 }
