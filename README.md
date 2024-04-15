@@ -23,9 +23,9 @@ npm run dev
 
 5) Interact with the platform locally. Add entries, it is functional. Deleting entries does not exist. Note, some data is hardcoded from the CSV.
 
+<br>
 
-
-Tech Stack  
+<u>Tech Stack </u>    
 TypeScript   
 NextJS - frontend is react  
 NextJS - backend api is next
