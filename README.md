@@ -25,7 +25,7 @@ npm run dev
 
 <br>
 
-<u>Tech Stack<u>        
+<u>Tech Stack<u>:           
 TypeScript   
 NextJS - frontend is react   
 NextJS - backend api is next  
