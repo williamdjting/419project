@@ -21,11 +21,11 @@ npm run dev
 
 4) Navigate to http://localhost:3000/projects with your browser to see the result. localhost:3000 is not used.
 
-5) Interact with the platform locally, it is functional. Some data is hardcoded from the CSV.
+5) Interact with the platform locally. Add entries, it is functional. Deleting entries does not exist. Note, some data is hardcoded from the CSV.
 
 
 Tech Stack
-NextJS - front end
-NextJS - backend
-TypeScript 
-Database - writes and reads to CSV's created in /lib directory
+NextJS - front end  
+NextJS - backend  
+TypeScript   
+Database - writes and reads to CSV's created in /lib directory     
