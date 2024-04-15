@@ -1,10 +1,19 @@
 This is DataMind - A Web Platform to Enhance Data Interpretability of Training Data through DataSheet Sharing
 
-1) Please git clone or git pull the repo
+1) Please git clone the repo
+```bash
+git clone https://github.com/williamdjting/419project.git
+```
 
-2) Install all npm packages using npm i
+3) Install all npm packages, ensure your node is up to date (NextJS requires an up to date version)
+```bash
+npm i
+```
+```bash
+nvm install node
+```
 
-3) Run the development server
+6) Run the development server
 
 ```bash
 npm run dev
