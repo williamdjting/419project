@@ -1,4 +1,4 @@
-This is DataMind - A Web Platform to Enhance Data Interpretability of Training Data through DataSheet Sharing
+**This is DataMind - A Web Platform to Enhance Data Interpretability of Training Data through DataSheet Sharing**
 
 1) Please git clone the repo
 ```bash
@@ -24,7 +24,7 @@ npm run dev
 5) Interact with the platform locally. Add entries, it is functional. Deleting entries does not exist. Note, some data is hardcoded from the CSV.
 
 
-Tech Stack
+**Tech Stack  **
 NextJS - front end  
 NextJS - backend  
 TypeScript   
