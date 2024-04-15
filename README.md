@@ -27,6 +27,6 @@ npm run dev
 
 __Tech Stack__      
 TypeScript   
-NextJS - frontend is react  
-NextJS - backend api is next
+NextJS - frontend is react   
+NextJS - backend api is next  
 Database - writes and reads to CSV's created in /lib directory     
